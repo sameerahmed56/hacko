@@ -1,0 +1,67 @@
+body{
+    /* background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(249,248,113,1) 0%, rgba(240,221,254,1) 90% ); */
+    /* background-color: rgb(234,    247, 247); */
+}
+.page{
+    margin-top:170px;
+    font-family: 'Poppins', sans-serif;
+    /* background: rgb(255,255,255); */
+    /* background: linear-gradient(90deg, rgba(255,255,255,1) 26%, rgba(232,232,155,1) 70%); */
+    /* border-radius: 0 25px 25px 0px; */
+    /* background-color: white; */
+}
+.input-icons i { 
+    position: absolute; 
+} 
+  
+.input-icons { 
+    width: 80%; 
+    margin-bottom: 10px; 
+} 
+  
+.icon { 
+    padding: 10px; 
+    min-width: 40px; 
+} 
+.ng-invalid.ng-touched {
+    border-color: red;
+}
+.input-field { 
+    width: 100%; 
+    padding: 10px; 
+    text-align: center;
+    border: none;
+    /* background-color:rgb(249, 252, 216); */
+    border-radius: 10px;
+
+    border-bottom: 1.5px solid black;
+    font-weight: bold;
+    font-size: larger; 
+    outline: none;
+} 
+.input-field:hover{
+    outline: none;
+    /* border: none; */
+}
+.img-wala{
+    /* background: rgb(113,196,204);
+background: linear-gradient(90deg, rgba(113,196,204,1) 47%, rgba(255,255,255,1) 70%); */
+background-color: #08AEEA;
+background-color: #FBAB7E;
+background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+
+border-radius: 95% 5px 0 25px;
+}
+.main{
+    margin-top: 50px;
+}
+@media only screen and (max-width: 600px) {
+    .img-wala{
+        display: none;
+    }
+  }
+@media only screen and (max-width: 800px) {
+    .main{
+        margin-top: 0px;
+    }
+}

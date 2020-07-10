@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+  </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
+  <link rel="stylesheet" href="index.css" />
+  <script src="index.js"></script>
+  <title>Covid-Info India</title>
+</head>
+
+<body ng-app="myApp" ng-controller="covidCasesController">
+  <div class="container-fluid">
+    <nav id="navbar-box" class="navbar navbar-expand-lg fixed-top navbar-light">
+      <a id="navlogo" class="navbar-brand" href="index.html"><img class="logo" src="images/logo6.png" width="70px"
+          height="117px" alt="GOV LOGO" /><strong> <span class="logo-name">Cov-Info</span></strong></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a id="navlink1" class="nav-link" href="index.html">Home <span class="sr-only">Home</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="navlink2" href="#contact_us">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="navlink3" href="#about_us">About Us</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="container-fluid wrap">
+    <div class="row">
+      <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
+        <h3 class="site-info">
+          Get All Necessary Information About Covid-19 At One Place. News,
+          Rumors, Recovered Person Log, Do and Dont's
+        </h3>
+      </div>
+      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-4">
+        <button class="btn btn-primary btn-outline-light join-btn" onclick="patientList()" role="button">
+          Patient Experience
+        </button>
+        <button class="btn btn-warning btn-outline-danger patient-btn" role="button">
+          <a href="patient/news_qery.html"> News And Rumors</a>
+        </button>
+        <button class="btn btn-info btn-outline-dark news-btn" role="button">
+          Share Your Experience <br />
+          <strong><a  href="/patient-reg/index.html"> Sign Up</a></strong>
+        </button>
+        <button class="btn btn-info btn-outline-dark news-btn" href="" role="button">
+          Share Your Experience <br />
+          <strong><a  href="/patient-login/Index.html"> Sign In</a></strong>
+        </button>
+        <button class="btn btn-warning btn-outline-danger patient-btn" role="button">
+          <a href="/manager-login/manager-login.html">Manager Sign In</a>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid info-div">
+    <div class="row">
+      <div class="cov-stats-heading">
+        <h1>India Covid-19 Stats</h1>
+        <span class="update-history">Last Updated 15 minutes ago </span>
+        <hr />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6">
+        <div class="data-box">
+          <h2>Total Cases</h2>
+          {{covidTotalData.confirmed}}
+        </div>
+      </div>
+      <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6">
+        <div class="data-box">
+          <h2>Total Recovered</h2>
+          {{covidTotalData.recovered}}
+        </div>
+      </div>
+      <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6">
+        <div class="data-box">
+          <h2>Active Cases</h2>
+          {{covidTotalData.active}}
+        </div>
+      </div>
+      <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6">
+        <div class="data-box">
+          <h2>Total Deaths</h2>
+          {{covidTotalData.deaths}}
+        </div>
+      </div>
+      <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6">
+        <div class="data-box">
+          <h2>Daily Cases</h2>
+          {{covidData.dailyconfirmed}}
+        </div>
+      </div>
+      <div class="col-xl-2 col-lg-2 col-md-4 col-sm-6 col-6">
+        <div class="data-box">
+          <h2>Today's Death</h2>
+          {{covidData.dailydeceased}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <br /><br />
+  <div class="container do-dont-div">
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+        <h1 class="covid-do-dont-heading">Covid-19 Do's & Don'ts</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+        <div class="do-box">
+          <h2 class="do-heading">Do's</h2>
+          <ul>
+            <li class="do-dont-li">Wash Your Hand</li>
+            <li class="do-dont-li">Cover Your Mouth & Nose</li>
+            <li class="do-dont-li">Consult A Doctor If Sick</li>
+            <li class="do-dont-li">Stay Indoors</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+        <div class="dont-box">
+          <h2 class="dont-heading">Don'ts</h2>
+          <ul>
+            <li class="do-dont-li">Avoid Close Contact With Anyone</li>
+            <li class="do-dont-li">Do Not Spit</li>
+            <li class="do-dont-li">Avoid Using Public Transport</li>
+            <li class="do-dont-li">Don’t Touch Your Face</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br><br>
+  <div class="conatiner-fluid">
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 about-us" id="about_us">
+        <h1 class="contact-heading">About Us</h1>
+        <div class="about-num">
+          MedFac has over two decades of experience in the healthcare sector, and is known for
+          providing quality healthcare and valuable experience to all domestic and international patients. Our
+          healthcare offerings are supported by a team of compassionate and dedicated medical professionals
+          who have rich knowledge and experience in their respective domains.
+          <h3 class="contact-heading">Awards</h3>
+          Received an “A” for Hospital Safety from The Leapfrog Group. This is their top grade in patient
+          safety.
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="conatiner-fluid">
+    <div class="row">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 contact-us" id="contact_us">
+        <h2 class="contact-heading">Contact Info</h2>
+        <div class="contact-num">
+          <p>Prime Minister Office: 8585858585</p>
+          <p>Director PRS: 9696805422</p>
+          <p>Technical Head: 7905332677</p>
+          <p>Head Of UP: 7878787878</p>
+          <p>Joint-Director: 9898989898</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <br />
+</body>
+
+</html>

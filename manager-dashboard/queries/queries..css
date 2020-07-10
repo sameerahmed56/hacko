@@ -1,0 +1,16 @@
+.main-body{
+    padding: 50px 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #fffcf7;
+    box-shadow: 2px 2px 5px black;
+    text-align: center;
+    width: 80%;
+    margin: 50px;
+    font-family: 'Poppins', sans-serif;
+
+}
+.reply-btn{
+    text-align: center;
+    width: 100%;
+}

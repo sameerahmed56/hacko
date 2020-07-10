@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>bootstrap4-responsive-sidebar</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <meta name="viewport" content="width=d  evice-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+            <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="/manager-dashboard/manager-home/manager-home.css">
+    <link href="/manager-dashboard/manager-home/manager-home.css">
+    <script src="/manager-dashboard/manager.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+</head>
+<body>
+<div class="row mt-5">
+    <div class="col-10 col-md-3 manager-row">
+        <div class="row manager-row1">
+            <div class="col-md-5 col-12">
+                <i class="fas fa-user-tie fa-5x"></i>
+            </div>
+            <div class="col-md-7 col-12">
+                <h1>2000+</h1>
+                <div>Client Success</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-10 col-md-3 manager-row">
+        <div class="row manager-row2">
+            <div class="col-md-5 col-12">
+                <i class="fas fa-award fa-5x"></i>
+            </div>
+            <div class="col-md-7 col-12">
+                <h1>5+</h1>
+                <div>Consultant Experience</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-10 col-md-3 manager-row">
+        <div class="row manager-row3">
+            <div class="col-md-5 col-12">
+                <i class="fas fa-globe-asia fa-5x"></i>
+            </div>
+            <div class="col-md-7 col-12">
+                <h1>7+</h1>
+                <div>Country survived</div>
+            </div>
+        </div>
+    </div>
+</div>
+<article class="card card-cascade wider mt-5" style="background-color: rgb(218, 226, 226);">
+    <section class="view gradient-card-header peach-gradient overlay d-flex align-items-center justify-content-center pt-2 pb-2">
+      <h3 class="card-header"><strong>Details</strong></h3>
+    </section>
+
+    <section class="card-body" style="background-color: rgb(234, 241, 243);">
+      <section class="card-deck">
+        <section class="card">
+          <section class="view overlay p-3 text-center">
+            <h3 class="pink-text darken-4">
+              <i class="fas fa-file-alt"></i>
+              Patients Request
+            </h3>
+            <p class="card-text">Accept/Reject Patient Daily Log Request</p>
+            <a class="btn btn-danger" ui-sref="patient-rqst"role="button">View Request</a>
+          </section>
+        </section>
+        <section class="card">
+          <section class="view overlay p-3 text-center">
+            <h3 class="deep-purple-text darken-4">
+              Queries & Reply
+            </h3>
+            <p class="card-text">Reply To Public Queries!</p>
+            <a ui-sref="queries" class="btn btn-danger" role="button">View List</a>
+          </section>
+        </section>
+      </section>
+      <section class="card mt-5">
+        <section class="view overlay p-3 text-center">
+          <h3 class="deep-purple-text darken-4">
+            Upload News
+          </h3>
+          <p class="card-text">Upload Day Today News</p>
+          <a ui-sref="news" class="btn btn-danger" ng-click="getpatientList()" role="button">Upload</a>
+        </section>
+      </section>
+    </section>
+  </article>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/landing-page.html/patient/ask/ask.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="/landing-page.html/patient/patient-route.js"></script>
+    <title>Login page for Students</title>
+</head>
+
+<body ng-app="myApp3">
+    <div class="login-box">
+        <div class="container" ng-controller="askController">
+            <div class="row">
+                <div class="col-sm-10 offset-sm-1 col-md-8 col-lg-6 offset-md-2 offset-xl-3">
+                    <div class="form" name="loginForm" novalidate>
+                        <h3 class="heading--form text-center">Ask Here?</h3>
+                        <div class="form-group">
+
+                            <label for="tittle">Name</label>
+                            <input type="text" class="form-control form--input" onfocusout="askNam()" id="askNam" placeholder="Name" ng-model="queNam"
+                                name="tittke" required>
+                                <span style="color: red; margin-left: 30%;" id="askNamMsg"></span>
+                        </div>
+                        <div class="form-group">
+
+                            <label for="tittle">Tittle</label>
+                            <input type="text" class="form-control form--input" onfocusout="askTitle()" id="askTitle" placeholder="Tittle" ng-model="quetitle"
+                                name="tittke" required>
+                                <span style="color: red; margin-left: 30%;" id="askTitleMsg"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="body">Body</label>
+                            <textarea name="message" class="form-control form--input" onfocusout="askBody()" rows="5" cols="10" placeholder="Ask Your Question here?????" id="askBody" ng-model="queBody"></textarea>
+                            <span style="color: red; margin-left: 30%;" id="askBodyMsg"></span>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="url">Link*</label>
+                            <input type="url" class="form-control form--input" id="askurl"placeholder="https://example.com" name="password" ng-model="queUrl"
+                                ng-required="true">
+                        </div>
+
+                        <div class="d-flex justify-content-center form--button">
+                            <button type="submit" class="btn btn-primary form-button" onclick="onAskSubmit()" ng-click="queAsk(queNam, queBody, quetitle, queUrl)"
+                                >Send</button></div>
+
+
+                        <h3 class="heading--third-party-logins text-center">Update Everyone with Current News</h3>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
