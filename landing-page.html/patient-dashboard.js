@@ -14,18 +14,18 @@ myApp.config(function ($stateProvider, $urlRouterProvider) {
             controller: 'firstController'
 
         })
-        .state('reviewmessage', {
-            url: '/review/:c/:d',
-            templateUrl: 'review.html',
-            controller: 'secondController'
+    // .state('reviewmessage', {
+    //     url: '/review/:c/:d',
+    //     templateUrl: 'review.html',
+    //     controller: 'secondController'
 
-        })
-        .state('topprojectsmessage', {
-            url: '/topprojects/:g/:h',
-            templateUrl: 'topprojects.html',
-            controller: 'fourthController'
+    // })
+    // .state('topprojectsmessage', {
+    //     url: '/topprojects/:g/:h',
+    //     templateUrl: 'topprojects.html',
+    //     controller: 'fourthController'
 
-        })
+    // })
     // .state('root', {
     //     url: '/',
     //     template: "YOU ARE AT ROOT"
@@ -40,20 +40,20 @@ myApp.controller('firstController', function ($scope, $stateParams) {
         $scope.b = $stateParams.b
 })
 
-myApp.controller('secondController', function ($scope, $stateParams) {
-    $scope.c = $stateParams.c,
-        $scope.d = $stateParams.d,
-        $scope.rate = '';
+// myApp.controller('secondController', function ($scope, $stateParams) {
+//     $scope.c = $stateParams.c,
+//         $scope.d = $stateParams.d,
+//         $scope.rate = '';
 
-})
+// })
 myApp.controller('thirdController', function ($scope, $stateParams) {
     $scope.e = $stateParams.e,
         $scope.f = $stateParams.f
 })
-myApp.controller('fourthController', function ($scope, $stateParams) {
-    $scope.g = $stateParams.g,
-        $scope.h = $stateParams.h
-})
+// myApp.controller('fourthController', function ($scope, $stateParams) {
+//     $scope.g = $stateParams.g,
+//         $scope.h = $stateParams.h
+// })
 
 
 
@@ -63,7 +63,7 @@ myApp.controller('docDisplayController', function ($scope, $http) {
             id: doctorJson
         }
         console.log(data);
-        $http.post("https://3815e3a0f72a.ngrok.io/user/details/", JSON.stringify(data))
+        $http.post("http://82b274a10bfe.ngrok.io/user/details/", JSON.stringify(data))
             .then(function (response) {
                 console.log(response.data[0]);
                 // console.log(response.data.data[0]);
@@ -100,7 +100,7 @@ myApp.controller('logController', function ($scope, $http) {
                 day: $scope.dayno
             }
             console.log(data);
-            $http.post("https://3815e3a0f72a.ngrok.io/log/create/", JSON.stringify(data))
+            $http.post("http://82b274a10bfe.ngrok.io/log/create/", JSON.stringify(data))
                 .then(function (response) {
                     console.log(response);
                 })
@@ -145,7 +145,7 @@ myApp.controller('logController', function ($scope, $http) {
                 day: $scope.dayno
             }
             console.log(data);
-            $http.post("https://3815e3a0f72a.ngrok.io/log/create/", JSON.stringify(data))
+            $http.post("http://82b274a10bfe.ngrok.io/log/create/", JSON.stringify(data))
                 .then(function (response) {
                     console.log(response);
                 })

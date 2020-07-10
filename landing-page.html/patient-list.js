@@ -12,7 +12,7 @@ myApp.controller("patientListDisplayController", function ($scope, $http) {
     $scope.$watch('$viewContentLoaded', function () {
         $http({
                 method: 'GET',
-                url: 'https://3815e3a0f72a.ngrok.io/user/list/'
+                url: 'http://82b274a10bfe.ngrok.io/user/list/'
             })
             .then(function (response) {
                 console.log(response);

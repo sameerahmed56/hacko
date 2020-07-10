@@ -157,79 +157,6 @@
         .vertical-1 {
             padding: 0;
         }
-
-        #customers {
-            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-            border-collapse: collapse;
-            width: 100%;
-            overflow-x: auto;
-        }
-
-        #customers td,
-        #customers th {
-            border: 1px solid #dddddd;
-            padding: 8px;
-        }
-
-        #customers tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-        #customers tr:hover {
-            background-color: #ddd;
-        }
-
-        #customers th {
-            letter-spacing: 1px;
-            padding-top: 12px;
-            padding-bottom: 12px;
-            text-align: left;
-            background-color: #2497b6;
-            color: white;
-        }
-
-        @media only screen and (max-width: 600px) {
-
-            /* Force table to not be like tables anymore */
-            table,
-            thead,
-            tbody,
-            th,
-            td,
-            tr {
-                display: block;
-            }
-
-            /* Hide table headers (but not display: none;, for accessibility) */
-            thead tr {
-                position: absolute;
-                top: -9999px;
-                left: -9999px;
-            }
-
-            tr {
-                border: 1px solid #ccc;
-            }
-
-            td {
-                /* Behave like a "row" */
-                border: none;
-                border-bottom: 1px solid #eee;
-                position: relative;
-                padding-left: 50%;
-            }
-
-            td:before {
-                /* Now like a table header */
-                position: absolute;
-                /* Top/left values mimic padding */
-                top: 6px;
-                left: 6px;
-                width: 45%;
-                padding-right: 10px;
-                white-space: nowrap;
-            }
-        }
     </style>
     <div class="container-fluid" ng-app="myApp" ng-controller="docDisplayController">
         <div class="row">
@@ -238,7 +165,7 @@
                     <div class="profile-box">
                         <img class="profile-pic" src="images/profile.png" alt="profile pic">
                         <h3 class="doctor-name" id="doctor_name">{{data.name}}</h3>
-                        <h5 class="doctor-age"> {{data.dob}} Year, {{data.gender}}</h5>
+                        <h5 class="doctor-age"> DOB - {{data.dob}}, {{data.gender}}</h5>
                     </div>
                 </div>
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -278,27 +205,12 @@
                     </div>
                 </div>
                 <div class="test-report">
-                    <h4 class="test-report-heading"><strong>Last Appointment:</strong></h4>
-                    was with <strong>{{data[0].patient_id__first_name}} {{data[0].patient_id__last_name}}</strong> at
-                    <strong>{{data[0].date_for_app}}</strong> on <strong>{{data[0].time_for_app}}</strong> for
-                    <strong>{{data[0].disease}}.</strong>
+                    <h4 class="test-report-heading"><strong>Nothing To Show Here:</strong></h4>
+
                 </div>
                 <div class="prescription-box">
-                    <h4 class="prescription-box-heading"><strong>Recent Patients:</strong></h4>
-                    <table id="customers">
-                        <tr>
-                            <th>Name</th>
-                            <th>Age</th>
-                            <th>Mobile Number</th>
-                            <th>No. Of Visits</th>
-                        </tr>
-                        <tr ng-repeat="data in datas">
-                            <td>{{data.patient_id__first_name}} {{data.patient_id__last_name}}</td>
-                            <td>{{data.patient_id__age}}</td>
-                            <td>{{data.patient_id__mobile_number}}</td>
-                            <td>{{data.id__count}}</td>
-                        </tr>
-                    </table>
+                    <h4 class="prescription-box-heading"><strong>Nothing to show here:</strong></h4>
+
                 </div>
             </div>
         </div>

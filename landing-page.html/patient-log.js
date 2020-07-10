@@ -11,7 +11,7 @@ myApp.controller("patientListDisplayController", function ($scope, $http) {
 
         }
         console.log(data);
-        $http.post("https://3815e3a0f72a.ngrok.io/log/details/", JSON.stringify(data))
+        $http.post("http://82b274a10bfe.ngrok.io/log/details/", JSON.stringify(data))
             .then(function (response) {
                 console.log(response);
                 $scope.datas = response.data;
